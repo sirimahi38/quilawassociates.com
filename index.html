@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qui Law Associates — Advocates & Legal Consultants</title>
+    <meta
+      name="description"
+      content="Professional legal services. Business law, family law, immigration, and more. Schedule a free consultation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+       /* --bg: #0b1120;  deep navy */
+		--bg: #0b1120; /* deep navy */
+        --bg-2: #111827; /* slate */
+        --card: #0f172a; /* dark slate */
+        --text: #e5e7eb; /* gray-200 */
+        --muted: #9ca3af; /* gray-400 */
+        --brand: #a78bfa; /* violet-300 */
+        --brand-2: #6366f1; /* indigo-500 */
+        --accent: #22d3ee; /* cyan-400 */
+        --ring: rgba(99, 102, 241, 0.55);
+        --shadow: rgba(2, 6, 23, 0.45);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 600px at 80% -10%,
+            rgba(99, 102, 241, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            1000px 600px at -10% 10%,
+            rgba(34, 211, 238, 0.12),
+            transparent 55%
+          ),
+          var(--bg);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Layout */
+      .container {
+        width: min(1200px, 92%);
+        margin-inline: auto;
+      }
+      .section {
+        padding: 72px 0;
+      }
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      @media (max-width: 900px) {
+        .grid-3 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 700px) {
+        .grid-3,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: saturate(140%) blur(10px);
+        background: rgba(2, 6, 23, 0.7);
+        border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--brand-2), var(--accent));
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35),
+          inset 0 0 14px rgba(255, 255, 255, 0.08);
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+      }
+      .brand-logo span {
+        font-size: 18px;
+        color: white;
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .cta {
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--brand-2), var(--brand));
+        box-shadow: 0 6px 20px var(--shadow);
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+      }
+      .menu-btn {
+        display: none;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(15, 23, 42, 0.6);
+        padding: 10px 12px;
+        border-radius: 12px;
+      }
+      @media (max-width: 880px) {
+        .nav-links {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+      }
+
+      /* Mobile menu */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        inset: 64px 12px auto 12px;
+        background: rgba(2, 6, 23, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 16px;
+        color: var(--muted);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .mobile-menu a:last-child {
+        border-bottom: 0;
+      }
+      .mobile-menu a:hover {
+        color: var(--text);
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        padding: 92px 0 64px;
+        overflow: hidden;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 32px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(99, 102, 241, 0.12);
+        border: 1px solid rgba(99, 102, 241, 0.28);
+        color: #c7d2fe;
+        font-weight: 600;
+      }
+      .title {
+        font-size: clamp(34px, 4.2vw, 56px);
+        line-height: 1.06;
+        margin: 12px 0;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .subtitle {
+        color: var(--muted);
+        max-width: 60ch;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        margin-top: 22px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-weight: 700;
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--brand-2), var(--brand));
+        color: white;
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+      }
+      .hero-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 20px 60px rgba(2, 6, 23, 0.6);
+      }
+      .hero-card img {
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+      .trust {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 16px;
+        color: var(--muted);
+      }
+      .trust small {
+        opacity: 0.9;
+      }
+      @media (max-width: 880px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Section headings */
+      .eyebrow {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #c7d2fe;
+        font-size: 12px;
+      }
+      .h2 {
+        font-size: clamp(26px, 3.2vw, 40px);
+        margin: 10px 0 8px;
+        line-height: 1.1;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 65ch;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 12px 30px rgba(2, 6, 23, 0.5);
+      }
+      .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--brand-2), transparent);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Practice areas */
+      .area-item h3 {
+        margin: 10px 0 6px;
+      }
+      .area-item p {
+        color: var(--muted);
+      }
+
+      /* Attorneys */
+      .team {
+        gap: 26px;
+      }
+      .member {
+        display: grid;
+        grid-template-columns: 104px 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+      .avatar {
+        width: 104px;
+        height: 104px;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
+      }
+
+      /* Testimonials */
+      .testimonial {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .quote {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .stars {
+        letter-spacing: 2px;
+        color: #fde68a;
+      }
+
+      /* Contact */
+      form {
+        display: grid;
+        gap: 14px;
+      }
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+      input,
+      textarea {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        outline: none;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--ring);
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+      }
+
+      /* Footer */
+      .footer {
+        padding: 40px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--muted);
+      }
+      .footer .grid {
+        align-items: center;
+      }
+
+      /* Utilities */
+      .pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 12px;
+        color: #cbd5e1;
+      }
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Homepage">
+          <div class="brand-logo" aria-hidden="true">
+		  <img
+            src="LogoMakr-2lHGG5.png"
+          />
+		  </div>
+          <div>
+            <div style="font-size: 16px; line-height: 1">Qui Law Associates</div>
+            <div style="font-size: 12px; color: var(--muted); line-height: 1">
+              Advocates & Legal Consultants
+            </div>
+          </div>
+        </a>
+        <nav class="nav-links" aria-label="primary">
+          <a href="#about">Home</a>
+          <a href="#areas">Legal Services</a>
+          <a href="#attorneys">Legal Team</a>
+          <a href="#testimonials">About Us</a>
+          <a href="#contact" class="cta">Contact Us</a>
+        </nav>
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          ☰
+        </button>
+      </div>
+      <div
+        class="mobile-menu"
+        id="mobileMenu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile menu"
+      >
+        <a href="#about" onclick="toggleMenu(false)">Home</a>
+        <a href="#areas" onclick="toggleMenu(false)">Legal Services</a>
+        <a href="#attorneys" onclick="toggleMenu(false)">Legal Team</a>
+        <a href="#testimonials" onclick="toggleMenu(false)">About Us</a>
+        <a href="#contact" onclick="toggleMenu(false)">
+          <strong>Contact Us</strong>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div>
+          <div class="badge">Trusted • Focused • Results</div>
+          <h1 class="title">
+            Clear, strategic counsel for life’s most important matters.
+          </h1>
+          <p class="subtitle">
+            A trusted law firm, having combined legal experience offering creative and practical counsel in complex situations. We offer legal services in civil, criminal, family, taxation, corporate, landlord-tenant, labour, services & constitutional laws.
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#contact">Book a Consultation</a>
+            <a class="btn" href="#areas">Explore Legal Services</a>
+          </div>
+          <div class="trust">
+            <small>⭐️⭐️⭐️⭐️⭐️ 200+ client reviews</small>
+            <span class="pill">Since 2020</span>
+            <span class="pill">Multilingual</span>
+            <span class="pill">Nationwide</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img
+            src="associates4.jpg?q=80&w=1600&auto=format&fit=crop"
+            alt="Courthouse interior"
+          />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-top: 12px;
+            "
+          >
+            <div style="font-weight: 700">Your success is our brief.</div>
+            <a class="pill" href="#contact">Talk to a lawyer →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="center">
+          <div class="eyebrow">About Us</div>
+          <h2 class="h2">A modern law firm with a human touch</h2>
+          <p >
+            Qui Law Associates prides itself on the highest levels of professionalism, integrity, and sensitivity. We understand that for lay clients, the court process can be stressful and intimidating and that having a lawyer with humanity and sensitivity is vital. For our professional clients, we know that the support of counsel, providing timely, expert advice, and tactical good sense can make the difference in important cases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="areas" class="section">
+      <div class="container">
+        <div class="grid grid-3">
+          <div class="card area-item">
+            <div class="icon">⚖️</div>
+            <h3>Business & Commercial</h3>
+            <p>
+              Contracts, shareholder disputes, startup advisory, mergers, and
+              commercial litigation.
+            </p>
+          </div>
+          <div class="card area-item">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h3>Family Law</h3>
+            <p>
+              Divorce, custody, maintenance, property division, and negotiated
+              settlements.
+            </p>
+          </div>
+          <div class="card area-item">
+            <div class="icon">🛂</div>
+            <h3>Immigration</h3>
+            <p>
+              Work permits, residency, appeals, and business immigration
+              planning.
+            </p>
+          </div>
+          <div class="card area-item">
+            <div class="icon">🏢</div>
+            <h3>Real Estate</h3>
+            <p>
+              Transactions, leases, property disputes, and due diligence
+              support.
+            </p>
+          </div>
+          <div class="card area-item">
+            <div class="icon">💼</div>
+            <h3>Employment</h3>
+            <p>
+              Contracts, wrongful termination, workplace investigations, and
+              compliance.
+            </p>
+          </div>
+          <div class="card area-item">
+            <div class="icon">🛡️</div>
+            <h3>Dispute Resolution</h3>
+            <p>
+              Litigation, arbitration, and mediation with a settlement-first
+              mindset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attorneys -->
+    <section id="attorneys" class="section">
+      <div class="container">
+        <div class="grid grid-2 team">
+          <div class="card member">
+            <img
+              class="avatar"
+              src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1000&auto=format&fit=crop"
+              alt="Attorney portrait"
+            />
+            <div>
+              <h3>Vishwanath Sirikonda</h3>
+              <p class="pill" style="display: inline-block; margin: 6px 0 10px">
+                Managing Partner
+              </p>
+              <p style="color: var(--muted)">
+                Complex litigation, arbitration, and cross-border disputes. LLM,
+                5+ years in practice.
+              </p>
+            </div>
+          </div>
+          <div class="card member">
+            <img
+              class="avatar"
+              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1000&auto=format&fit=crop"
+              alt="Attorney portrait"
+            />
+            <div>
+              <h3>Swapna Ambani</h3>
+              <p class="pill" style="display: inline-block; margin: 6px 0 10px">
+                Senior Associate
+              </p>
+              <p style="color: var(--muted)">
+                Corporate advisory, employment law, and transactions for
+                high-growth companies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="grid grid-3">
+          <div class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              “They made a stressful process simple and transparent. Excellent
+              communication and outcome.”
+            </p>
+            <small class="muted">— Mahesh , NRI Belgium </small>
+          </div>
+          <div class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              “Smart, strategic, and kind. We felt supported every step of the
+              way.”
+            </p>
+            <small class="muted">— Srikanth</small>
+          </div>
+          <div class="card testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              “Clear advice and fast resolution. Highly recommend for startups.”
+            </p>
+            <small class="muted">— R.P., Founder</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="eyebrow">Contact</div>
+            <h2 class="h2">Request a free consultation</h2>
+            <p class="lead">
+              Tell us about your matter and how we can help. We’ll get back to
+              you within one business day.
+            </p>
+            <form
+              onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch shortly.');"
+            >
+              <div class="grid grid-2">
+                <div class="field">
+                  <label for="name">Full name</label>
+                  <input id="name" name="name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+              </div>
+              <div class="grid grid-2">
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" />
+                </div>
+                <div class="field">
+                  <label for="area">Practice area</label>
+                  <input id="area" name="area" placeholder="e.g., Family Law" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="message">Brief description</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="How can we help?"
+                ></textarea>
+              </div>
+              <button class="btn primary" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Visit Us</div>
+            <h2 class="h2">Offices & Hours</h2>
+            <p class="lead">Mon–Fri: 9:00–18:00 • Sat by appointment</p>
+            <div style="display: grid; gap: 12px; margin-top: 14px">
+              <div>
+                <strong>Head Office</strong>
+                <br />
+                1st Floor Ramalingaiah Building
+                <br />
+                Puppalaguda , Manikonda, Hyderabad
+              </div>
+              <div>
+                <strong>Call</strong>
+                +91 8790504682
+                <br />
+                <strong>Email</strong>
+                vishwanath.sirikonda@gmail.com
+              </div>
+              <iframe
+                title="Map"
+                style="
+                  width: 100%;
+                  height: 220px;
+                  border-radius: 12px;
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                "
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=4.347%2C50.845%2C4.357%2C50.852&amp;layer=mapnik"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container grid grid-3">
+        <div>
+          <div class="brand" style="gap: 10px">
+            <div class="brand-logo" aria-hidden="true"><span>⚖️</span></div>
+            <strong>Qui Law Associates — Advocates & Legal Consultants</strong>
+          </div>
+        </div>
+        <div>
+          <strong>Quick Links</strong>
+          <div style="display: grid; gap: 8px; margin-top: 8px">
+            <a href="#about">Home</a>
+            <a href="#areas">Legal Services</a>
+            <a href="#attorneys">Legal Team</a>
+            <a href="#contact">About Us</a>
+          </div>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <div style="display: grid; gap: 8px; margin-top: 8px">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <small>
+              ©
+              <span id="year"></span>
+              Qui Law Associates — Advocates & Legal Consultants. All rights reserved.
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn")
+      const mobileMenu = document.getElementById("mobileMenu")
+      function toggleMenu(force) {
+        const open =
+          typeof force === "boolean"
+            ? force
+            : mobileMenu.style.display !== "block"
+        mobileMenu.style.display = open ? "block" : "none"
+        menuBtn.setAttribute("aria-expanded", String(open))
+      }
+      menuBtn.addEventListener("click", () => toggleMenu())
+
+      // Update year
+      document.getElementById("year").textContent = new Date().getFullYear()
+    </script>
+  </body>
+</html>
